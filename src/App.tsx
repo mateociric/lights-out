@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import LightContainer from './LightContainer/LightContainer';
+import GameControl from './GameControl/GameControl';
 
 function App() {
+
+  const [initialLightsCondition, setInitialLightsCondition] = useState<boolean[]>([]);
+
+  function createLights(event: React.MouseEvent<HTMLButtonElement>) {
+    const numOfLights = (((event.target as any).value));
+    setInitialLightsCondition(Array(+numOfLights).fill(true).map(() => !!Math.round(Math.random())));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <LightContainer initialLightsCondition={initialLightsCondition} />
+      <GameControl onClick={createLights} />
+    </>
+  )
 }
 
 export default App;
