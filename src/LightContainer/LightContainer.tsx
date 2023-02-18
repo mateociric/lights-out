@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Light from "../Light/Light";
 import './LightContainer.scss';
+import adjacentLightsSwitched from "./utility/adjacentLightsSwitched";
 
 function LightContainer(props: { initialLightsCondition: boolean[] }) {
 
@@ -21,7 +22,8 @@ function LightContainer(props: { initialLightsCondition: boolean[] }) {
 
     function switchSingleLight(id: number) {
         const adjacentVertical = groupOfLights.length % 6 === 0 ? 6 : (groupOfLights.length % 5 === 0 ? 5 : 4);
-        // continue with selection
+        const switchedLights = adjacentLightsSwitched(id, adjacentVertical, groupOfLights);
+        setGroupOfLights(switchedLights);
     };
 
 return (
