@@ -1,5 +1,6 @@
 .groupOfLights {
-    width: 100;
+    width: 100%;
+    min-width: 30rem;
     aspect-ratio: 1;
     margin: 0 auto;
     display: grid;
@@ -8,5 +9,10 @@
 }
 
 .start-msg {
-    //
+    grid-column: 1/-1;
+    justify-self: center;
+    align-self: center;
+    font-size: 3rem;
+    text-align: center;
+    color: #797979;
 }

@@ -1,6 +1,7 @@
 .light-box {
     width: 100%;
     aspect-ratio: 1;
+    border-radius: .25rem;
 
     &:hover {
         transform: scale(.95);

@@ -21,7 +21,7 @@ function LightContainer(props: { initialLightsCondition: boolean[] }) {
     });
 
     const adjacentVerticalBoxSelect = groupOfLights.length % 6 === 0 ? 6 : (groupOfLights.length % 5 === 0 ? 5 : 4);
-    const startMsg = newLights.length > 0 ? newLights : <p className="start-msg">Switch OFF ALL LIGHTS</p>
+    const startMsg = newLights.length > 0 ? newLights : <h1 className="start-msg">SWITCH OFF ALL LIGHTS</h1>
 
     function switchSingleLight(id: number) {
         const switchedLights = adjacentLightsSwitched(id, adjacentVerticalBoxSelect, groupOfLights);
