@@ -20,17 +20,19 @@ function LightContainer(props: { initialLightsCondition: boolean[] }) {
         />
     });
 
+    const adjacentVerticalBoxSelect = groupOfLights.length % 6 === 0 ? 6 : (groupOfLights.length % 5 === 0 ? 5 : 4);
+    const startMsg = newLights.length > 0 ? newLights : <p className="start-msg">Switch OFF ALL LIGHTS</p>
+
     function switchSingleLight(id: number) {
-        const adjacentVertical = groupOfLights.length % 6 === 0 ? 6 : (groupOfLights.length % 5 === 0 ? 5 : 4);
-        const switchedLights = adjacentLightsSwitched(id, adjacentVertical, groupOfLights);
+        const switchedLights = adjacentLightsSwitched(id, adjacentVerticalBoxSelect, groupOfLights);
         setGroupOfLights(switchedLights);
     };
 
-return (
-    <section className="groupOfLights">
-        {newLights}
-    </section>
-)
+    return (
+        <section className='groupOfLights' style={ {gridTemplateColumns: `repeat(${adjacentVerticalBoxSelect}, 1fr)`} }>
+            {startMsg}
+        </section>
+    )
 
 }
 

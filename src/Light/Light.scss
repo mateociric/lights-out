@@ -1,12 +1,16 @@
+.light-box {
+    width: 100%;
+    aspect-ratio: 1;
+
+    &:hover {
+        transform: scale(.95);
+    }
+}
+
 .light {
     background-color: #ffa600;
 }
 
 .dark {
     background-color: #000000;
-}
-
-.light {
-    width: 100%;
-    aspect-ratio: 1;
 }
