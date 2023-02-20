@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Header from './Header/Header';
-import LightContainer from './LightContainer/LightContainer';
-import GameControl from './GameControl/GameControl';
+import Header from './component/Header/Header';
+import LightContainer from './component/LightContainer/LightContainer';
+import GameControl from './component/GameControl/GameControl';
 
 function App() {
 
@@ -11,6 +11,7 @@ function App() {
 
   function createLights(event: React.MouseEvent<HTMLButtonElement>) {
     const numOfLights = (((event.target as any).value));
+    //create random array of boolean values
     setInitialLightsCondition(Array(+numOfLights).fill(true).map(() => !!Math.round(Math.random())));
   }
 

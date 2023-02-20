@@ -1,0 +1,10 @@
+@import '../../style/varaible.scss';
+
+.groupOfLights {
+    width: 100%;
+    min-width: 30rem;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    display: grid;
+    gap: .1rem;
+}

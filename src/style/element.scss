@@ -1,0 +1,46 @@
+main {
+    width: 30%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    min-width: 30rem;
+    font-size: $fsize-large;
+    font-weight: $fweight;
+    text-align: center;
+    line-height: $lheight;
+    color: $color-black
+}
+
+h1 {
+    grid-column: 1/-1;
+    justify-self: center;
+    align-self: center;
+    font-size: $fsize-large;
+    text-align: center;
+    color: $color-black;
+}
+
+button {
+    border: 0.1rem solid $color-btn-border;
+    border-radius: .25rem;
+    flex-grow: 1;
+    font-family: $ftype;
+    font-size: 125%;
+    font-weight: $fweight;
+    line-height: $lheight;
+    color: $color-black;
+    background-color: $color-btn-bg;
+    transform: scale(.95);
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &:active {
+        background-color: $color-btn-active;
+        opacity: .8;
+        transform: scale(.9);
+    }
+}

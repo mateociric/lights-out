@@ -1,0 +1,19 @@
+@import '../../style/varaible.scss';
+
+.box {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: .25rem;
+
+    &:hover {
+        transform: scale(.95);
+    }
+}
+
+.box-is-light {
+    background-color: $color-yellow;
+}
+
+.box-is-dark {
+    background-color: $color-black;
+}
