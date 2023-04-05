@@ -12,8 +12,12 @@ function App() {
   function createLights(event: React.MouseEvent<HTMLButtonElement>) {
     const numOfLights = (((event.target as any).value));
     //create random array of boolean values
-    setInitialLightsCondition(Array(+numOfLights).fill(true).map(() => !!Math.round(Math.random())));
+    setInitialLightsCondition(Array.from({ length: +numOfLights }, () => {
+      return !!Math.round(Math.random())
+    }))
   }
+
+  console.log(initialLightsCondition);
 
   return (
     <>
